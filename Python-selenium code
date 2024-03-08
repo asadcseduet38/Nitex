@@ -1,0 +1,41 @@
+# This is the selenium code for automation practice form
+
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from colorama import Fore, Back, Style
+
+# Open the driver and maximize it
+driver = webdriver.Chrome("D:\python\chromedriver_win32.exe")
+driver.maximize_window()
+
+# Open the automation practice form and fill all the fields and click the submit button
+driver.get("https://demoqa.com/automation-practice-form")
+driver.find_element_by_id("firstName").send_keys("first_name")
+driver.find_element_by_id("lastName").send_keys("last_name")
+driver.find_element_by_id("userEmail").send_keys("a@a.com");
+driver.find_element_by_id("gender-radio-1").send_keys("gender-radio-1");
+time.sleep(0.5)
+driver.find_element_by_id("userNumber").send_keys("01714727527");
+time.sleep(0.5)
+driver.find_element_by_id("currentAddress").send_keys("Cherag ali market, tongi, gazipur"); 
+driver.find_element_by_id("submit").click();
+driver.quit()
+
+# This is the selenium code for automation the text box
+
+# Open the driver and maximize it
+driver = webdriver.Chrome("D:\python\chromedriver_win32.exe")
+driver.maximize_window()
+driver.get("https://demoqa.com/automation-practice-form")
+
+# Open the text box form and fill all the fields and click the submit button
+driver.find_element_by_link_text("Elements").click()
+driver.find_element_by_link_text("Text Box").click()
+driver.find_element_by_id("userName").send_keys("full_name")
+driver.find_element_by_id("userEmail").send_keys("a@a.com")
+driver.find_element_by_id("currentAddress").send_keys("tongi");
+driver.find_element_by_id("permanentAddress").send_keys("Gazipur");
+driver.find_element_by_id("submit").click();
+driver.quit()
